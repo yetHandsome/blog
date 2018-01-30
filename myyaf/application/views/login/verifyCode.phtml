@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>google verify code</title>
+        
+        <!-- Our CSS stylesheet file -->
+        <link rel="stylesheet" href="/resources/css/form-styles.css" />
+        
+        <!--[if lt IE 9]>
+          <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    
+    <body>
+
+		<div id="formContainer">
+<!--			<form id="login" method="post" action="/login/verifyCode">
+				<a href="#" id="flipToRecover" class="flipLink">Forgot?</a>
+				<input type="text" name="loginEmail" id="loginEmail" value="Email" />
+				<input type="password" name="verifyCode" id="loginPass" value="" />
+				<input type="submit" name="submit" value="Login" />
+			</form>-->
+<!--			<form id="recover" method="post" action="/login/verifyCode">
+				<a href="#" id="flipToLogin" class="flipLink">Forgot?</a>
+				<input type="password" name="verifyCode" id="recoverEmail" value="" />
+				<input type="submit" name="submit" value="LOGIN" />
+			</form>-->
+
+                        <form id="login" method="post" action="/login/verifyCode">
+				<a href="#" id="flipToLogin" class="flipLink">Forgot?</a>
+                                <?php
+                                    if(isset($msg)){
+                                ?>
+                                <input style="top:170px;color:#f00" type="text" value="<?php echo $msg; ?>" />
+                                    <?php } ?>
+				<input type="password" name="verifyCode" id="recoverEmail" value="" />
+				<input type="submit" name="submit" value="LOGIN" />
+			</form>
+		</div>
+
+<!--        <footer>
+	        <h2><i>Tutorial:</i> Apple-like Login Form With CSS 3D Transforms</h2>
+            <a class="tzine" href="http://tutorialzine.com/2012/02/apple-like-login-form/">Head on to <i>Tutorial<b>zine</b></i> to download this example</a>
+        </footer>-->
+        
+        <!-- JavaScript includes -->
+		<!--<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>-->
+<!--		<script src="/resources/js/jquery-1.7.1.min.js"></script>-->
+<!--		<script src="/resources/js/script.js"></script>-->
+
+    </body>
+</html>
+

@@ -1,0 +1,205 @@
+<html lang="zh"><head>
+        <meta charset="utf-8">
+        <title>Simple example - Editor.md examples</title>
+        <!-- Reset Stylesheet -->
+        <link rel="stylesheet" href="/resources/css/reset.css" type="text/css" media="screen" />
+        <!-- Main Stylesheet -->
+        <link rel="stylesheet" href="/resources/css/style.css" type="text/css" media="screen" />
+        <!-- Invalid Stylesheet. This makes stuff look pretty. Remove it if you want the CSS completely valid -->
+        <link rel="stylesheet" href="/resources/css/invalid.css" type="text/css" media="screen" />
+        
+        <link rel="stylesheet" href="/resources/editor/examples/css/style.css">
+        <link rel="stylesheet" href="/resources/editor/css/editormd.css">
+<!--        <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon">-->
+        <link type="text/css" rel="stylesheet" href="/resources/editor/lib/codemirror/codemirror.min.css">
+        <link type="text/css" rel="stylesheet" href="/resources/editor/lib/codemirror/addon/dialog/dialog.css">
+        <link type="text/css" rel="stylesheet" href="/resources/editor/lib/codemirror/addon/search/matchesonscrollbar.css">
+        <script id="-lib-codemirror-codemirror-min" type="text/javascript" src="/resources/editor/lib/codemirror/codemirror.min.js">
+        </script><script id="-lib-codemirror-modes-min" type="text/javascript" src="/resources/editor/lib/codemirror/modes.min.js"></script>
+        <script id="-lib-codemirror-addons-min" type="text/javascript" src="/resources/editor/lib/codemirror/addons.min.js"></script>
+        <script id="-lib-marked-min" type="text/javascript" src="/resources/editor/lib/marked.min.js"></script>
+        <script id="-lib-prettify-min" type="text/javascript" src="/resources/editor/lib/prettify.min.js"></script>
+    </head>
+    <body>
+        <div id="layout">
+            <header>
+                <h1>Simple example</h1>
+            </header>
+            <div class="tab-content" id="tab2">
+                            <form action="/index/article/AddArticle" method="post">
+                                <fieldset style="margin-left: 80px">
+                                    <!-- Set class to "column-left" or "column-right" on fieldsets to divide the form into columns -->
+                                    <p>
+                                        
+                                        标题:<input class="text-input small-input" type="text" id="medium-input" name="title" />
+
+                                       
+                                    </p>
+
+<!--                                    <p>
+                                        <label>首次可见时间</label>
+                                        <input type="text" name="show_time" />
+                                    </p>-->
+
+                                    <p>
+                                        
+                                        <input type="radio" name="is_show" value="1" checked='checked' /> 可见
+                                        <input type="radio" name="is_show" value="0" /> 隐藏
+                                    </p>
+
+                                    <p>
+                                        
+                                        <?php foreach ($article_class as $k => $v) { ?>
+                                        <input type="checkbox" name="show_time" value="<?php echo $v['id']; ?>" /> <span style="color:<?php echo $v['color']; ?> "> <?php echo $v['name']; ?> </span>
+                                        <?php }?>
+                                        <input class="button" type="submit" value="Submit" />
+                                    </p>
+                                    
+
+                                    
+                                </fieldset>
+                                <div class="clear"></div>
+                                <!-- End .clear -->
+                           
+            <div id="test-editormd" class="editormd editormd-vertical" style="width: 90%; height: 640px;">
+                <textarea style="display:none;" class="editormd-markdown-textarea" placeholder="Enjoy Markdown! coding now..." name="markdown_doc">[TOC]
+
+#### Disabled options
+
+- TeX (Based on KaTeX);
+- Emoji;
+- Task lists;
+- HTML tags decode;
+- Flowchart and Sequence Diagram;
+
+#### Editor.md directory
+
+    editor.md/
+            lib/
+            css/
+            scss/
+            tests/
+            fonts/
+            images/
+            plugins/
+            examples/
+            languages/     
+            editormd.js
+            ...
+
+```html
+&lt;!-- English --&gt;
+&lt;script src="../dist/js/languages/en.js"&gt;&lt;/script&gt;
+
+&lt;!-- 繁體中文 --&gt;
+&lt;script src="../dist/js/languages/zh-tw.js"&gt;&lt;/script&gt;
+```
+                </textarea>
+                <div class="CodeMirror cm-s-default CodeMirror-wrap" style="font-size: 13px; width: 618.5px; margin-top: 78px; height: 561px;">
+                    <div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4px; left: 51px;">
+                        <textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea>
+                    </div>
+                    <div class="CodeMirror-vscrollbar" cm-not-content="true" style="display: block; bottom: 0px;">
+                        <div style="min-width: 1px; height: 737px;"></div>
+
+                    </div>
+                    <div class="CodeMirror-hscrollbar" cm-not-content="true">
+                        <div style="height: 100%; min-height: 1px; width: 0px;"></div>
+
+                    </div>
+                    <div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div>
+                    <div class="CodeMirror-gutter-filler" cm-not-content="true"></div>
+                    <div class="CodeMirror-scroll" tabindex="-1">
+                        <div class="CodeMirror-sizer" style="margin-left: 39px; margin-bottom: -7px; border-right-width: 23px; min-height: 734px; padding-right: 7px; padding-bottom: 0px;">
+                            <div style="position: relative; top: 0px;">
+                                <div class="CodeMirror-lines">
+                                    <div style="position: relative; outline: none;">
+                                        <div class="CodeMirror-measure"><span><span>​</span>x</span></div>
+                                        <div class="CodeMirror-measure"></div>
+                                        <div style="position: relative; z-index: 1;"></div>
+                                        <div class="CodeMirror-cursors" style="visibility: hidden;">
+                                            <div class="CodeMirror-cursor" style="left: 12px; top: 0px; height: 22px;">&nbsp;</div>
+
+                                        </div>
+                                        <div class="CodeMirror-code" style="">
+                                            <div class="CodeMirror-activeline" style="position: relative;">
+                                                <div class="CodeMirror-activeline-background CodeMirror-linebackground"></div>
+                                                <div class="CodeMirror-gutter-wrapper" style="left: -39px; width: 39px;">
+                                                    <div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">1</div>
+
+                                                </div>
+                                                <pre class=""><span style="padding-right: 0.1px;">[TOC]</span></pre>
+                                            </div>
+                                            <div style="position: relative;">
+                                                <div class="CodeMirror-gutter-wrapper" style="left: -39px; width: 39px;">
+                                                    <div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">2</div>
+
+                                                </div>
+                                                <pre class=""><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre>
+                                            </div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px; width: 39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">3</div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-header cm-header-4">#### Disabled options</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px; width: 39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">4</div></div><pre class=""><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px; width: 39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">5</div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-variable-2">- TeX (Based on KaTeX);</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px; width: 39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">6</div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-variable-2">- Emoji;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px; width: 39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">7</div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-variable-2">- Task lists;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px; width: 39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">8</div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-variable-2">- HTML tags decode;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px; width: 39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">9</div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-variable-2">- Flowchart and Sequence Diagram;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px; width: 39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">10</div></div><pre class=""><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px; width: 39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">11</div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-header cm-header-4">#### Editor.md directory</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px; width: 39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">12</div></div><pre class=""><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px; width: 39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">13</div></div><pre class=""><span style="padding-right: 0.1px;"> &nbsp;  <span class="cm-comment">editor.md/</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px; width: 39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">14</div></div><pre class=""><span style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <span class="cm-comment">lib/</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px; width: 39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">15</div></div><pre class=""><span style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <span class="cm-comment">css/</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px; width: 39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">16</div></div><pre class=""><span style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <span class="cm-comment">scss/</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px; width: 39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">17</div></div><pre class=""><span style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <span class="cm-comment">tests/</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px; width: 39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">18</div></div><pre class=""><span style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <span class="cm-comment">fonts/</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px; width: 39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">19</div></div><pre class=""><span style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <span class="cm-comment">images/</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px; width: 39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">20</div></div><pre class=""><span style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <span class="cm-comment">plugins/</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px; width: 39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">21</div></div><pre class=""><span style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <span class="cm-comment">examples/</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px; width: 39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">22</div></div><pre class=""><span style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <span class="cm-comment">languages/</span><span class="cm-comment cm-cm-overlay cm-trailingspace"> &nbsp; &nbsp; </span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px; width: 39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">23</div></div><pre class=""><span style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <span class="cm-comment">editormd.js</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px; width: 39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">24</div></div><pre class=""><span style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <span class="cm-comment">...</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px; width: 39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">25</div></div><pre class=""><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px; width: 39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">26</div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-comment">```html</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px; width: 39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">27</div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-comment">&lt;!-- English --&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px; width: 39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">28</div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">script</span> <span class="cm-attribute">src</span>=<span class="cm-string">"../dist/js/languages/en.js"</span><span class="cm-tag cm-bracket">&gt;&lt;/</span><span class="cm-tag">script</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px; width: 39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">29</div></div><pre class=""><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px; width: 39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">30</div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-comment">&lt;!-- 繁體中文 --&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px; width: 39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">31</div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">script</span> <span class="cm-attribute">src</span>=<span class="cm-string">"../dist/js/languages/zh-tw.js"</span><span class="cm-tag cm-bracket">&gt;&lt;/</span><span class="cm-tag">script</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px; width: 39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">32</div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-comment">```</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px; width: 39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">33</div></div><pre class=""><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 23px; width: 1px; top: 734px;"></div><div class="CodeMirror-gutters" style="height: 757px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 28px;"></div><div class="CodeMirror-gutter CodeMirror-foldgutter"></div></div></div></div>
+                <a href="javascript:;" class="fa fa-close editormd-preview-close-btn"></a>
+
+                <div class="editormd-preview" style="display: block; width: 617.5px; top: 78px; height: 561px;"><div class="markdown-body editormd-preview-container" previewcontainer="true" style="padding: 20px;"><div class="markdown-toc editormd-markdown-toc"><ul class="markdown-toc-list"><li><a class="toc-level-4" href="#Disabled options" level="4">Disabled options</a></li><li><a class="toc-level-4" href="#Editor.md directory" level="4">Editor.md directory</a><ul></ul></li></ul></div><h4 id="h4-disabled-options"><a name="Disabled options" class="reference-link"></a><span class="header-link octicon octicon-link"></span>Disabled options</h4><ul>
+                            <li>TeX (Based on KaTeX);</li><li>Emoji;</li><li>Task lists;</li><li>HTML tags decode;</li><li>Flowchart and Sequence Diagram;</li></ul>
+                        <h4 id="h4-editor-md-directory"><a name="Editor.md directory" class="reference-link"></a><span class="header-link octicon octicon-link"></span>Editor.md directory</h4><pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">editor</span><span class="pun">.</span><span class="pln">md</span><span class="pun">/</span></code></li><li class="L1"><code><span class="pln">        lib</span><span class="pun">/</span></code></li><li class="L2"><code><span class="pln">        css</span><span class="pun">/</span></code></li><li class="L3"><code><span class="pln">        scss</span><span class="pun">/</span></code></li><li class="L4"><code><span class="pln">        tests</span><span class="pun">/</span></code></li><li class="L5"><code><span class="pln">        fonts</span><span class="pun">/</span></code></li><li class="L6"><code><span class="pln">        images</span><span class="pun">/</span></code></li><li class="L7"><code><span class="pln">        plugins</span><span class="pun">/</span></code></li><li class="L8"><code><span class="pln">        examples</span><span class="pun">/</span></code></li><li class="L9"><code><span class="pln">        languages</span><span class="pun">/</span><span class="pln">     </span></code></li><li class="L0"><code><span class="pln">        editormd</span><span class="pun">.</span><span class="pln">js</span></code></li><li class="L1"><code><span class="pln">        </span><span class="pun">...</span></code></li></ol></pre><pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code class="lang-html"><span class="com">&lt;!-- English --&gt;</span></code></li><li class="L1"><code class="lang-html"><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"../dist/js/languages/en.js"</span><span class="tag">&gt;&lt;/script&gt;</span></code></li><li class="L2"><code class="lang-html"></code></li><li class="L3"><code class="lang-html"><span class="com">&lt;!-- 繁體中文 --&gt;</span></code></li><li class="L4"><code class="lang-html"><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"../dist/js/languages/zh-tw.js"</span><span class="tag">&gt;&lt;/script&gt;</span></code></li></ol></pre>
+</div></div>
+<div class="editormd-container-mask" style="display: none;"></div>
+<div class="editormd-mask"></div><div class="editormd-toolbar" style="display: block;"><div class="editormd-toolbar-container"><ul class="editormd-menu"><li><a href="javascript:;" title="撤销（Ctrl+Z）" unselectable="on"><i class="fa fa-undo" name="undo" unselectable="on"></i></a></li><li><a href="javascript:;" title="重做（Ctrl+Y）" unselectable="on"><i class="fa fa-repeat" name="redo" unselectable="on"></i></a></li><li class="divider" unselectable="on">|</li><li><a href="javascript:;" title="粗体" unselectable="on"><i class="fa fa-bold" name="bold" unselectable="on"></i></a></li><li><a href="javascript:;" title="删除线" unselectable="on"><i class="fa fa-strikethrough" name="del" unselectable="on"></i></a></li><li><a href="javascript:;" title="斜体" unselectable="on"><i class="fa fa-italic" name="italic" unselectable="on"></i></a></li><li><a href="javascript:;" title="引用" unselectable="on"><i class="fa fa-quote-left" name="quote" unselectable="on"></i></a></li><li><a href="javascript:;" title="将每个单词首字母转成大写" unselectable="on"><i class="fa" name="ucwords" style="font-size:20px;margin-top: -3px;">Aa</i></a></li><li><a href="javascript:;" title="将所选转换成大写" unselectable="on"><i class="fa fa-font" name="uppercase" unselectable="on"></i></a></li><li><a href="javascript:;" title="将所选转换成小写" unselectable="on"><i class="fa" name="lowercase" style="font-size:24px;margin-top: -10px;">a</i></a></li><li class="divider" unselectable="on">|</li><li><a href="javascript:;" title="标题1" unselectable="on"><i class="fa editormd-bold" name="h1" unselectable="on">H1</i></a></li><li><a href="javascript:;" title="标题2" unselectable="on"><i class="fa editormd-bold" name="h2" unselectable="on">H2</i></a></li><li><a href="javascript:;" title="标题3" unselectable="on"><i class="fa editormd-bold" name="h3" unselectable="on">H3</i></a></li><li><a href="javascript:;" title="标题4" unselectable="on"><i class="fa editormd-bold" name="h4" unselectable="on">H4</i></a></li><li><a href="javascript:;" title="标题5" unselectable="on"><i class="fa editormd-bold" name="h5" unselectable="on">H5</i></a></li><li><a href="javascript:;" title="标题6" unselectable="on"><i class="fa editormd-bold" name="h6" unselectable="on">H6</i></a></li><li class="divider" unselectable="on">|</li><li><a href="javascript:;" title="无序列表" unselectable="on"><i class="fa fa-list-ul" name="list-ul" unselectable="on"></i></a></li><li><a href="javascript:;" title="有序列表" unselectable="on"><i class="fa fa-list-ol" name="list-ol" unselectable="on"></i></a></li><li><a href="javascript:;" title="横线" unselectable="on"><i class="fa fa-minus" name="hr" unselectable="on"></i></a></li><li class="divider" unselectable="on">|</li><li><a href="javascript:;" title="链接" unselectable="on"><i class="fa fa-link" name="link" unselectable="on"></i></a></li><li><a href="javascript:;" title="引用链接" unselectable="on"><i class="fa fa-anchor" name="reference-link" unselectable="on"></i></a></li><li><a href="javascript:;" title="添加图片" unselectable="on"><i class="fa fa-picture-o" name="image" unselectable="on"></i></a></li><li><a href="javascript:;" title="行内代码" unselectable="on"><i class="fa fa-code" name="code" unselectable="on"></i></a></li><li><a href="javascript:;" title="预格式文本 / 代码块（缩进风格）" unselectable="on"><i class="fa fa-file-code-o" name="preformatted-text" unselectable="on"></i></a></li><li><a href="javascript:;" title="代码块（多语言风格）" unselectable="on"><i class="fa fa-file-code-o" name="code-block" unselectable="on"></i></a></li><li><a href="javascript:;" title="添加表格" unselectable="on"><i class="fa fa-table" name="table" unselectable="on"></i></a></li><li><a href="javascript:;" title="日期时间" unselectable="on"><i class="fa fa-clock-o" name="datetime" unselectable="on"></i></a></li><li><a href="javascript:;" title="Emoji表情" unselectable="on"><i class="fa fa-smile-o" name="emoji" unselectable="on"></i></a></li><li><a href="javascript:;" title="HTML实体字符" unselectable="on"><i class="fa fa-copyright" name="html-entities" unselectable="on"></i></a></li><li><a href="javascript:;" title="插入分页符" unselectable="on"><i class="fa fa-newspaper-o" name="pagebreak" unselectable="on"></i></a></li><li class="divider" unselectable="on">|</li><li><a href="javascript:;" title="跳转到行" unselectable="on"><i class="fa fa-terminal" name="goto-line" unselectable="on"></i></a></li><li><a href="javascript:;" title="关闭实时预览" unselectable="on"><i class="fa fa-eye-slash" name="watch" unselectable="on"></i></a></li><li><a href="javascript:;" title="全窗口预览HTML（按 Shift + ESC还原）" unselectable="on"><i class="fa fa-desktop" name="preview" unselectable="on"></i></a></li><li><a href="javascript:;" title="全屏（按ESC还原）" unselectable="on"><i class="fa fa-arrows-alt" name="fullscreen" unselectable="on"></i></a></li><li><a href="javascript:;" title="清空" unselectable="on"><i class="fa fa-eraser" name="clear" unselectable="on"></i></a></li><li><a href="javascript:;" title="搜索" unselectable="on"><i class="fa fa-search" name="search" unselectable="on"></i></a></li><li class="divider" unselectable="on">|</li><li><a href="javascript:;" title="使用帮助" unselectable="on"><i class="fa fa-question-circle" name="help" unselectable="on"></i></a></li><li><a href="javascript:;" title="关于Editor.md" unselectable="on"><i class="fa fa-info-circle" name="info" unselectable="on"></i></a></li></ul></div></div></div>
+        </div>
+             </form>
+                        </div>
+        <script src="/resources/editor/examples/js/jquery.min.js"></script>
+        <script src="/resources/editor/editormd.min.js"></script>
+        <script type="text/javascript">
+            var testEditor;
+
+            $(function () {
+                testEditor = editormd("test-editormd", {
+//                    width: "90%",
+//                    height: 640,
+//                    syncScrolling: "single",
+//                    path: "../lib/"
+                    
+                    
+                    width: "90%",
+                        height: 740,
+                        path : '../lib/',
+                        //theme : "dark",
+                        //previewTheme : "dark",
+                        //editorTheme : "pastel-on-dark",
+                        markdown : md,
+                        codeFold : true,
+                        //syncScrolling : false,
+                        saveHTMLToTextarea : true,    // 保存 HTML 到 Textarea
+                        searchReplace : true,
+                        //watch : false,                // 关闭实时预览
+                        htmlDecode : "style,script,iframe|on*",            // 开启 HTML 标签解析，为了安全性，默认不开启    
+                        //toolbar  : false,             //关闭工具栏
+                        //previewCodeHighlight : false, // 关闭预览 HTML 的代码块高亮，默认开启
+                        emoji : true,
+                        taskList : true,
+                        tocm            : true,         // Using [TOCM]
+                        tex : true,                   // 开启科学公式TeX语言支持，默认关闭
+                        flowChart : true,             // 开启流程图支持，默认关闭
+                        sequenceDiagram : true,       // 开启时序/序列图支持，默认关闭,
+                        //dialogLockScreen : false,   // 设置弹出层对话框不锁屏，全局通用，默认为true
+                        //dialogShowMask : false,     // 设置弹出层对话框显示透明遮罩层，全局通用，默认为true
+                        //dialogDraggable : false,    // 设置弹出层对话框不可拖动，全局通用，默认为true
+                        //dialogMaskOpacity : 0.4,    // 设置透明遮罩层的透明度，全局通用，默认值为0.1
+                        //dialogMaskBgColor : "#000", // 设置透明遮罩层的背景颜色，全局通用，默认为#fff
+                });
+
+                /*
+                 // or
+                 testEditor = editormd({
+                 id      : "test-editormd",
+                 width   : "90%",
+                 height  : 640,
+                 path    : "../lib/"
+                 });
+                 */
+            });
+        </script>
+    
+</body>
+</html>

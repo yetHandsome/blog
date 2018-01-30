@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Simpla Admin by yetshine.com</title>
+        <!--                       CSS                       -->
+        <!-- Reset Stylesheet -->
+        <link rel="stylesheet" href="/resources/css/reset.css" type="text/css" media="screen" />
+        <!-- Main Stylesheet -->
+        <link rel="stylesheet" href="/resources/css/style.css" type="text/css" media="screen" />
+        <!-- Invalid Stylesheet. This makes stuff look pretty. Remove it if you want the CSS completely valid -->
+        <link rel="stylesheet" href="/resources/css/invalid.css" type="text/css" media="screen" />
+        <!--                       Javascripts                       -->
+        <!-- jQuery -->
+        <script type="text/javascript" src="/resources/scripts/jquery-1.3.2.min.js"></script>
+        <!-- jQuery Configuration -->
+        <script type="text/javascript" src="/resources/scripts/simpla.jquery.configuration.js"></script>
+        <!-- Facebox jQuery Plugin -->
+        <script type="text/javascript" src="/resources/scripts/facebox.js"></script>
+        <!-- jQuery WYSIWYG Plugin -->
+        <script type="text/javascript" src="/resources/scripts/jquery.wysiwyg.js"></script>
+        <!-- jQuery Datepicker Plugin -->
+        <!--<script type="text/javascript" src="/resources/scripts/jquery.datePicker.js"></script>
+        <script type="text/javascript" src="/resources/scripts/jquery.date.js"></script>-->
+            <link rel="icon" href="/resources/images/favicon.ico">
+        <script type="text/javascript">
+            $(function() {
+                $('a[target="leftFrame"]').click(function() {
+                    $('a[data="all"]').removeClass('current');
+                    $(this).parent().parent().prev('a').addClass('current');
+                    $(this).addClass('current');
+                });
+            });
+
+        </script>
+    </head>
+    <body>
+        <div id="body-wrapper">
+            <!-- Wrapper for the radial gradient background -->
+            <div id="sidebar">
+                <div id="sidebar-wrapper">
+                    <!-- Sidebar with logo and menu -->
+                    <h1 id="sidebar-title"><a href="#">Simpla Admin</a></h1>
+                    <!-- Logo (221px wide) -->
+                    <a href="http://yetshine.com"><img id="logo" src="/resources/images/logo.png" alt="Simpla Admin logo" /></a>
+                    <!-- Sidebar Profile links -->
+                    <div id="profile-links"> Hello, <a href="#" title="Edit your profile"><?php echo $username; ?></a>, you have <a href="#messages" rel="modal" title="3 Messages">3 Messages</a><br />
+                        <br />
+                        <a href="#" title="View the Site">View the Site</a> | <a href="/login/loginOut" title="Sign Out">Sign Out</a> </div>
+                    <ul id="main-nav">
+                        <!-- Accordion Menu -->
+                        <li> <a data="all" href="http://yetshine.com/" class="nav-top-item no-submenu">
+                                <!-- Add the class "no-submenu" to menu items with no sub menu -->
+                                Dashboard </a> 
+                        </li>
+                        <li> 
+                            <a data="all" href="#" class="nav-top-item current">
+                                <!-- Add the class "current" to current menu item -->
+                                User Info </a>
+                            <ul>
+                                <li><a data="all" target="leftFrame" class="current" href="/index/index/userInfor">change password</a></li>
+                            </ul>
+                        </li>
+                        <li> 
+                            <a data="all" href="#" class="nav-top-item">
+                                <!-- Add the class "current" to current menu item -->
+                                Authority management
+                            </a>
+                            <ul>
+                                <li><a data="all" target="leftFrame" class="" href="#">user list</a></li>
+                                <li><a data="all" target="leftFrame" class="" href="#">role list</a></li>
+                                <li><a data="all" target="leftFrame" class="" href="#">Permission list</a></li>
+                            </ul>
+                        </li>
+                        <li> 
+                            <a data="all" href="#" class="nav-top-item">
+                                <!-- Add the class "current" to current menu item -->
+                                Article management
+                            </a>
+                            <ul>
+                                <li><a data="all" target="leftFrame" class="" href="/index/article/index">Article list</a></li>
+                                <li><a data="all" target="leftFrame" class="" href="/index/article/addarticle">Add Article</a></li>
+                                <li><a data="all" target="leftFrame" class="" href="/index/article/ArticleClass">Classification manage</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                    <!-- End #main-nav -->
+                    <div id="messages" style="display: none">
+                        <!-- Messages are shown when a link with these attributes are clicked: href="#messages" rel="modal"  -->
+                        <h3>3 Messages</h3>
+                        <p> <strong>17th May 2009</strong> by Admin<br />
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. <small><a href="#" class="remove-link" title="Remove message">Remove</a></small> </p>
+                        <p> <strong>2nd May 2009</strong> by Jane Doe<br />
+                            Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est. <small><a href="#" class="remove-link" title="Remove message">Remove</a></small> </p>
+                        <p> <strong>25th April 2009</strong> by Admin<br />
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. <small><a href="#" class="remove-link" title="Remove message">Remove</a></small> </p>
+                        <form action="#" method="post">
+                            <h4>New Message</h4>
+                            <fieldset>
+                                <textarea class="textarea" name="textfield" cols="79" rows="5"></textarea>
+                            </fieldset>
+                            <fieldset>
+                                <select name="dropdown" class="small-input">
+                                    <option value="option1">Send to...</option>
+                                    <option value="option2">Everyone</option>
+                                    <option value="option3">Admin</option>
+                                    <option value="option4">Jane Doe</option>
+                                </select>
+                                <input class="button" type="submit" value="Send" />
+                            </fieldset>
+                        </form>
+                    </div>
+                    <!-- End #messages -->
+                </div>
+            </div>
+            <!-- End #sidebar -->
+
+            <div id="main-content" style="padding:0;margin:0 30px 0 260px">
+                <iframe name="leftFrame" id="leftFrame" frameborder="0" src="/index/index/userInfor" style="visibility: inherit; width: 100%; z-index: 5; border: none; height:750px;" >
+
+                </iframe>
+            </div>
+            <!-- End #footer -->
+        </div>
+        <!-- End #main-content -->
+        </div>
+    </body>
+    <!-- Download From www.exet.tk-->
+</html>
