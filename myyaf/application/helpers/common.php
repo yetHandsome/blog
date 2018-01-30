@@ -5,7 +5,7 @@ function  p($a){
     echo '</pre>';
 }
 /*Common  */
-class Cm{
+class Common{
     
     public  static function p($arr=array()){
         foreach ($arr as $key => $value) {
