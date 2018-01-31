@@ -1,1 +1,2 @@
-/nbproject/private/
+#忽略数据库配置文件
+application.ini
