@@ -31,8 +31,11 @@ class IndexController extends Yaf_Controller_Abstract {
             $this->getView()->assign("res2", $article_doc2);
             $is_doc = 1;
             list($prve_doc,$next_doc) = $this->get_prve_next_doc($id,$article_list2);
+            $codeSrc = Common::getDomin().'/?id='.$id;
             $this->getView()->assign("prve_doc", $prve_doc);
             $this->getView()->assign("next_doc", $next_doc);
+            $this->getView()->assign("codeSrc", $codeSrc);
+            
         }else{
             $is_doc = 0;
             $this->getView()->assign("res2", $article_list2);

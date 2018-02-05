@@ -214,6 +214,8 @@ case"opacity":k.gradient&&!k[a]("stroke-opacity")&&q(i,{"stroke-opacity":p>1?p/1
 <?php echo $v['markdown_doc_sort']; ?>
 </textarea>
             </div>
+        <div id="url-code">
+              </div>
         <?php if($is_doc == 0) { ?>
         <a class="article-more-a"  href="/?id=<?php echo $v['id']; ?>">more &gt;&gt;</a>
         <?php } ?>
@@ -296,6 +298,22 @@ case"opacity":k.gradient&&!k[a]("stroke-opacity")&&q(i,{"stroke-opacity":p>1?p/1
     </span>
   </div>
 </div>
+        <script src="/resources/exos/jquery.qrcode.js"></script>
+  <script src="/resources/exos/utf.js"></script>
+  <!--<script src="/resources/exos/qrcode.js"></script>-->
+        <script>
+        $("#url-code").qrcode({
+              render: "canvas",    //设置渲染方式，有table和canvas，使用canvas方式渲染性能相对来说比较好
+              text: '<?php echo $codeSrc ?>',  //扫描二维码后显示的内容,可以直接填一个网址，扫描二维码后自动跳向该链接
+              width: "152",               //二维码的宽度
+              height: "152",              //二维码的高度
+              typeNumber: -1,//计算模式
+              correctLevel: 2,//二维码纠错级别
+              background: "#ffffff",       //二维码的后景色
+              foreground: "#000000",        //二维码的前景色
+              src: '/resources/exos/litten4.png'             //二维码中间的图片
+            });
+        </script>
       <?php } ?>
 
       
