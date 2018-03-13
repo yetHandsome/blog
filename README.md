@@ -8,6 +8,9 @@
 
 跟后台myyaf
 
+myyaf/conf跟yafhome/conf下的application.ini已经加入忽略列表，
+本地跟线上请复制根目录下的application.ini并修改为本连接信息
+
 数据库文件在myyaf.sql 里面
 
 还在持续优化中，下面是待优化事项
