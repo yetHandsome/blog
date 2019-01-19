@@ -43,10 +43,10 @@ class IndexController extends Yaf_Controller_Abstract {
         $config = Yaf_Registry::get('config');
 
         if($config->gitment){
-          $this->getView()->assign("owner", $config->owner);
-          $this->getView()->assign("repo", $config->repo);
-          $this->getView()->assign("client_id", $config->client_id);
-          $this->getView()->assign("client_secret", $config->client_secret);
+          $this->getView()->assign("owner", $config->github->owner);
+          $this->getView()->assign("repo", $config->github->repo);
+          $this->getView()->assign("client_id", $config->github->client_id);
+          $this->getView()->assign("client_secret", $config->github->client_secret);
         }
         $this->getView()->assign("gitment", $config->gitment);
 
