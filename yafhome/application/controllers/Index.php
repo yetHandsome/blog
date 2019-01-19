@@ -1,23 +1,23 @@
 <?php
 class IndexController extends Yaf_Controller_Abstract {
-    
+
     private  $user_list;
-    
+
     public function init() {//访问的所有方法都会先访问这个方法
-        
+
     }
-    
+
     public function indexAction() {//默认Action
         $request        = $this->getRequest();
         $id             = intval($request->getQuery('id',0));
-        
+
         $model = new Model('private');
         $article_list   = $model->table('article_list')
                             ->field("id,title,uid,insert_time,update_time,article_class,is_show,show_time,markdown_doc_sort")
                             ->where('is_show = 1')
                             ->groupBy('id desc')
                             ->select();
-        
+
         $article_class  = $model->table('article_class')->select();
         $article_list2 = $this->change_article_list($article_list,$article_class);
         //var_dump($article_list2);die;
@@ -35,18 +35,30 @@ class IndexController extends Yaf_Controller_Abstract {
             $this->getView()->assign("prve_doc", $prve_doc);
             $this->getView()->assign("next_doc", $next_doc);
             $this->getView()->assign("codeSrc", $codeSrc);
-            
+
         }else{
             $is_doc = 0;
             $this->getView()->assign("res2", $article_list2);
         }
-        
-        
+        $config = Yaf_Registry::get('config');
+
+        if($config->gitment){
+          $this->getView()->assign("owner", $config->owner);
+          $this->getView()->assign("repo", $config->repo);
+          $this->getView()->assign("client_id", $config->client_id);
+          $this->getView()->assign("client_secret", $config->client_secret);
+        }
+        $this->getView()->assign("gitment", $config->gitment);
+
+
+
         $this->getView()->assign("res", $article_list2);
         $this->getView()->assign("article_class", $article_class);
         $this->getView()->assign("is_doc", $is_doc);
     }
-    
+
+
+
     public function get_prve_next_doc($id,$article_list){
         $prev         = false;
         $next         = false;
@@ -76,7 +88,7 @@ class IndexController extends Yaf_Controller_Abstract {
         }
         return $article_list;
     }
-    
+
     public function getUserName($uid) {
         $this->user_list;
         if(!isset($this->user_list[$uid])){
@@ -90,11 +102,11 @@ class IndexController extends Yaf_Controller_Abstract {
         }
         return $this->user_list[$uid];
     }
-    
+
     public function getArticleClass($article_class_str,$article_class) {
         $article_class_arr = array_unique(array_filter(explode(',', $article_class_str)));
         $res = array();
-        
+
         foreach ($article_class_arr as $key => $value) {
             foreach ($article_class as $k => $v) {
                 if($value == $v['id']){
@@ -102,9 +114,9 @@ class IndexController extends Yaf_Controller_Abstract {
                 }
             }
         }
-        
+
         return $res;
     }
-   
+
 }
 ?>

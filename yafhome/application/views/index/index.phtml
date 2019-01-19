@@ -338,22 +338,23 @@
                 });
             });
         </script>
+        <?php if($gitment) { ?>
         <div id="gitment_container" style="margin: 30px;position: relative;"></div>
         <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
         <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
         <script>
         var gitment = new Gitment({
           id: '<?php echo $v['id']; ?>', // 可选。默认为 location.href
-          owner: 'yetHandsome',
-          repo: 'blog',
+          owner: '<?php echo $owner; ?>',
+          repo: '<?php echo $repo; ?>',
           oauth: {
-            client_id: '14499e7a1f20b90556cf',
-            client_secret: '6dc43dd11db71c2fdf381431bdcc70f67a3fe65d',
+            client_id: '<?php echo $client_id; ?>',
+            client_secret: '<?php echo $client_secret; ?>',
           },
         })
         gitment.render('gitment_container')
         </script>
-
+        <?php }?>
 
   <?php } ?>
 
