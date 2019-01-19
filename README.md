@@ -10,8 +10,8 @@
 
 myyaf/conf 跟 yafhome/conf 下的 application.ini 已经加入忽略列表，conf 这个文件夹要自己创建，添加到忽略列表了所以没有
 本地跟线上请复制根目录下的 application.ini 并修改为本连接信息
-application.ini  下面的 Gitment
-gitment = false 就不必添加其它的github信息，页面也不会有留言，如果要添加留言功能去下面网址申请，并填写对应信息
+application.ini  下面的 gitment
+gitment = false 就不必添加其它的github信息，页面也不会有留言功能，如果要添加留言功能去下面网址申请（有github账号即可），并填写对应信息
 https://github.com/settings/applications/new
 
 gitment = true
