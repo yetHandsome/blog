@@ -57,6 +57,11 @@ class IndexController extends Yaf_Controller_Abstract {
         $this->getView()->assign("is_doc", $is_doc);
     }
 
+    public function OAuthAction() {//默认Action
+        $request        = $this->getRequest();
+        $id             = intval($request->getQuery('id',0));
+        exit('POST');
+    }
 
 
     public function get_prve_next_doc($id,$article_list){
