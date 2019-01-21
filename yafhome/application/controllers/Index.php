@@ -58,19 +58,11 @@ class IndexController extends Yaf_Controller_Abstract {
     }
 
     public function OAuthAction() {//默认Action
-        $request        = $this->getRequest();
-        $client_id      = $request->getPost('client_id','');
-        $client_secret  = $request->getPost('client_secret','');
-        $code           = $request->getPost('code','');
-        $tokenUrl = 'https://github.com/login/oauth/access_token';
-        $params = [
-    			'client_id' => $client_id,
-    			'client_secret' => $client_secret,
-    			'code' => $code,
-    		];
+        $tokenUrl =  'https://github.com/login/oauth/access_token';
+        $params = json_decode(file_get_contents('php://input', 'r'),true);
     		$headers = [
     			'Accept: application/json',
-    			'Content-Type: application/x-www-form-urlencoded',
+    			'Content-Type: application/x-www-form-urlencoded'
     		];
 	      $request = self::curl($tokenUrl,$params,$headers,true );
         header('Content-type: application/json; charset=utf-8');
@@ -100,15 +92,15 @@ class IndexController extends Yaf_Controller_Abstract {
         if($headers) {
           curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
         }
+        if (is_array($params)){
+            $params = http_build_query($params, null, '&');
+        }
         if ($ispost) {
             curl_setopt($ch, CURLOPT_POST, true);
             curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
             curl_setopt($ch, CURLOPT_URL, $url);
         } else {
             if ($params) {
-                if (is_array($params)) {
-                    $params = http_build_query($params);
-                }
                 curl_setopt($ch, CURLOPT_URL, $url . '?' . $params);
             } else {
                 curl_setopt($ch, CURLOPT_URL, $url);
