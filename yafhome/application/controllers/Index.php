@@ -59,8 +59,11 @@ class IndexController extends Yaf_Controller_Abstract {
 
     public function OAuthAction() {//默认Action
         $request        = $this->getRequest();
-        $id             = intval($request->getQuery('id',0));
-        exit('POST');
+        $client_id      = $request->getPost('client_id','');
+        $client_secret  = $request->getPost('client_secret','');
+        $code           = $request->getPost('code','');
+        header('Content-type: application/json; charset=utf-8');
+        exit('{"access_token":"0dfa9ef62b48c834383354976d826c2e5badcd9b","token_type":"bearer","scope":"public_repo"}');
     }
 
 
