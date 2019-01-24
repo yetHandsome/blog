@@ -20,6 +20,64 @@ github.repo          = blog_repo #可以是任意一个你的项目仓库名，�
 github.client_id     =  xxxxxxxxx #填写你申请的Client# ID
 github.client_secret = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 填写你申请的Client Secret
 
+
+nginx 配置 假设 代码放入/home/www/github_blog/blog下
+
+--博客 注意下面有2出 yafhome
+server {
+        listen 8080;
+	      listen 80;
+        server_name blog.yetshine.com;
+        root "/home/www/github_blog/blog/yafhome/public/";
+	if (!-e $request_filename) {
+    		rewrite ^/(.*)  /index.php/$1 last;
+  	}
+	
+	location /resources/{
+		alias /home/www/github_blog/blog/yafhome/public/resources/;
+	}
+	location /{
+    		rewrite ^/(.*)  /index.php/$1 last;
+	}
+        location ~ \.php(.*)$ {
+            fastcgi_pass   127.0.0.1:9000;
+            fastcgi_index  index.php;
+            fastcgi_split_path_info  ^((?U).+\.php)(/?.+)$;
+            fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+            fastcgi_param  PATH_INFO  $fastcgi_path_info;
+            fastcgi_param  PATH_TRANSLATED  $document_root$fastcgi_path_info;
+            include        fastcgi_params;
+        }
+}
+
+--后台 注意下面有2出 myyaf
+server {
+        listen 8080;
+	listen 80;
+        server_name admin.yetshine.com;
+        root "/home/www/github_blog/blog/myyaf/public/";
+	if (!-e $request_filename) {
+    		rewrite ^/(.*)  /index.php/$1 last;
+  	}
+	
+	location /resources/{
+		alias /home/www/github_blog/blog/myyaf/public/resources/;
+	}
+	location /{
+    		rewrite ^/(.*)  /index.php/$1 last;
+	}
+        location ~ \.php(.*)$ {
+            fastcgi_pass   127.0.0.1:9000;
+            fastcgi_index  index.php;
+            fastcgi_split_path_info  ^((?U).+\.php)(/?.+)$;
+            fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+            fastcgi_param  PATH_INFO  $fastcgi_path_info;
+            fastcgi_param  PATH_TRANSLATED  $document_root$fastcgi_path_info;
+            include        fastcgi_params;
+        }
+}
+
+
 数据库文件在myyaf.sql 里面
 
 还在持续优化中，下面是待优化事项
