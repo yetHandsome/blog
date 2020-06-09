@@ -47,7 +47,7 @@ class Model{
                 //$stmt->bindValue(":{$key}", $value);
             }
             if ($this->run($stmt)) {
-                return $stmt->rowCount() ? $stmt->rowCount() : true;
+                return $this->conn->lastInsertId();
             }
             return false;
         }
